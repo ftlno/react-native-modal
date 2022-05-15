@@ -24,11 +24,11 @@ describe('Example', () => {
       await element(by.id(`${modalName}-modal-open-button`)).tap();
 
       const modal = element(by.id(`modal`));
-      await expect(modal).toBeNotVisible();
+      await expect(modal).not.toBeVisible();
       await element(by.id(`modal-open-button`)).tap();
       await expect(modal).toBeVisible();
       await element(by.id('close-button')).tap();
-      await expect(modal).toBeNotVisible();
+      await expect(modal).not.toBeVisible();
       element(by.id('header-back')).tap();
       await waitFor(500);
     }
@@ -39,18 +39,18 @@ describe('Example', () => {
       await element(by.id(`swipeable-modal-open-button`)).tap();
 
       const modal = element(by.id('modal'));
-      await expect(modal).toBeNotVisible();
+      await expect(modal).not.toBeVisible();
       await element(by.id('modal-open-button')).tap();
       await expect(modal).toBeVisible();
       await modal.swipe('down', 'fast', 0.5);
-      await expect(modal).toBeNotVisible();
+      await expect(modal).not.toBeVisible();
     });
 
     it('should NOT close the bottom-half modal by swiping up', async () => {
       await element(by.id(`swipeable-modal-open-button`)).tap();
 
       const modal = element(by.id('modal'));
-      await expect(modal).toBeNotVisible();
+      await expect(modal).not.toBeVisible();
       await element(by.id('modal-open-button')).tap();
       await expect(modal).toBeVisible();
       await modal.swipe('up', 'fast', 0.5);
@@ -60,7 +60,7 @@ describe('Example', () => {
       await element(by.id(`swipeable-modal-open-button`)).tap();
 
       const modal = element(by.id('modal'));
-      await expect(modal).toBeNotVisible();
+      await expect(modal).not.toBeVisible();
       await element(by.id('modal-open-button')).tap();
       await expect(modal).toBeVisible();
       await modal.swipe('right', 'fast', 0.5);
@@ -70,7 +70,7 @@ describe('Example', () => {
       await element(by.id(`swipeable-modal-open-button`)).tap();
 
       const modal = element(by.id('modal'));
-      await expect(modal).toBeNotVisible();
+      await expect(modal).not.toBeVisible();
       await element(by.id('modal-open-button')).tap();
       await expect(modal).toBeVisible();
       await modal.swipe('left', 'fast', 0.5);

@@ -88,7 +88,7 @@
     "configurations": {
       "ios.sim.debug": {
         "binaryPath": "example/ios/build/Build/Products/Debug-iphonesimulator/ModalExample.app",
-        "build": "export RCT_NO_LAUNCH_PACKAGER=true && xcodebuild -workspace example/ios/ModalExample.xcworkspace -scheme ModalExample -configuration Debug -sdk iphonesimulator -derivedDataPath example/ios/build -UseModernBuildSystem=YES | xcpretty -k",
+        "build": "RCT_NO_LAUNCH_PACKAGER=true xcodebuild build -scheme ModalExample -project example/ios/ModalExample.xcodeproj -sdk iphonesimulator -configuration Debug -derivedDataPath example/ios/build ONLY_ACTIVE_ARCH=YES -quiet -UseModernBuildSystem=NO",
         "type": "ios.simulator",
         "device": {
           "type": "iPhone 13"
