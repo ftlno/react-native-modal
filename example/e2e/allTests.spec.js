@@ -1,5 +1,9 @@
 describe('Example', () => {
-  const waitFor = delay => new Promise(accept => setTimeout(accept, delay));
+  const waitFor = (delay) => new Promise((accept) => setTimeout(accept, delay));
+
+  beforeAll(async () => {
+    await device.launchApp();
+  });
 
   beforeEach(async () => {
     await device.reloadReactNative();
